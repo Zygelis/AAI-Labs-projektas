@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Read in data
-df = pd.read_excel("WEOOct2020all.xls")
+df = pd.read_excel("WEOOct2020all.xls", engine="xlrd")
 
 # TASK 5
 # Find all the data fields from the year 2015 that are present in most of the countries.

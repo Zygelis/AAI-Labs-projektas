@@ -7,7 +7,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Read data
-df = pd.read_excel("C:\\Users\\Zygis\\Desktop\\test\\WEOOct2020all.xls", engine="xlrd")
+df = pd.read_excel("WEOOct2020all.xls", engine="xlrd")
 
 # Features that are not related to GDP per capita, except 'NGDPDPC' which is the target variable.
 all_features = [
@@ -94,7 +94,7 @@ def data_preparation(df, features):
     df_pivoted = df_pivoted.drop(["WEO Country Code", "Year"], axis=1)
 
     # To excel
-    df_pivoted.to_excel("C:\\Users\\Zygis\\Desktop\\test\\df_cleaned.xlsx")
+    df_pivoted.to_excel("df_cleaned.xlsx")
 
     # Split data to X and y
     df_X = df_pivoted.drop(["NGDPDPC"], axis=1)
