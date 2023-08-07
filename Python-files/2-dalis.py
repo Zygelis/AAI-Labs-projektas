@@ -34,7 +34,7 @@ def plot_population(df, country, year_start, year_end):
 
 
 # Read OECD countries from JSON file
-OECD = read_OECD("oecd-countries-2023.json")
+OECD = read_OECD("2-dalis\\oecd-countries-2023.json")
 
 # Select rows where WEO subject code is LP (Population) and country is in OECD coutries list
 df = df[(df["WEO Subject Code"] == "LP") & df["Country"].isin(OECD)]
