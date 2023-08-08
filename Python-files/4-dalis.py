@@ -80,7 +80,9 @@ def plot_clusters(df):
         lambda x: x.nlargest(5, "NGDPD")
     )
 
+    print("Top 5 countries per cluster:")
     print(top_countries_per_cluster)
+    print("\n")
 
     # Annotate the top 5 countries per cluster
     for ids, row in top_countries_per_cluster.iterrows():
