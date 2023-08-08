@@ -172,3 +172,6 @@ def compare_models(X, y):
     )
 
     return models[best_model_mse]
+
+print("\n")
+print("Models_6.py done")
