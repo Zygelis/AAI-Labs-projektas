@@ -1,0 +1,27 @@
+[
+    {
+        "features": {
+            "BCA": 4.267,
+            "GGXWDG": 365.853,
+            "LP": 4.299,
+            "LUR": 5.915,
+            "PPPEX": 6.118
+        },
+        "target": {
+            "predicted_gdp_per_capita": [30432.89]
+        }
+    },
+    {
+        "features": {
+            "BCA": 3.881,
+            "GGXWDG": 19.366,
+            "LP": 1.296,
+            "LUR": 7.975,
+            "PPPEX": 3.301
+        },
+        "target": {
+            "predicted_gdp_per_capita": [12471.95]
+        }
+    }
+]
+
