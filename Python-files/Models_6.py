@@ -11,7 +11,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.ensemble import RandomForestRegressor
-from Data_preparation_6p import *
+from Data_preparation_6 import *
 
 # Read data
 df = pd.read_excel("C:\\Users\\Zygis\\Desktop\\test\\WEOOct2020all.xls", engine="xlrd")
