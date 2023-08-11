@@ -21,8 +21,8 @@ def read_OECD(path):
 
 
 # Function to plot population growth of OECD countries from 2010 to 2019
-def plot_population(df, country, year_start, year_end):
-    plot = sns.lineplot(data=df.loc[country, year_start:year_end], marker="o")
+def plot_population(df, country):
+    plot = sns.lineplot(data=df.loc[country], marker="o")
     sns.set_style("darkgrid")
 
     plot.set_title(f"{country} population growth over the last decade")
@@ -54,4 +54,4 @@ df = df.loc[:, year_start:year_end]
 
 # plot population growth rate of selected countries
 for country in OECD:
-    plot_population(df, country, year_start, year_end)
+    plot_population(df, country)
