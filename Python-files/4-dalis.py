@@ -51,15 +51,22 @@ def clean_data(df, year):
     # Convert column TXG_RPCH to numeric
     df["TXG_RPCH"] = pd.to_numeric(df["TXG_RPCH"])
 
-    # Scale the data to avoid false results
+    # Scale the data
     scaled_df = StandardScaler().fit_transform(df[["NGDPD", "TXG_RPCH"]])
 
-    return df, scaled_df
+    scaled_df = pd.DataFrame(scaled_df, columns=["NGDPD", "TXG_RPCH"])
+
+    # Or keep the original data
+    df_target_original = df[["NGDPD", "TXG_RPCH"]]
+
+    df = df[["Country", "NGDPD", "TXG_RPCH"]]
+
+    return df, scaled_df, df_target_original
 
 
-def apply_kmeans(df, df2, num_clusters):
-    kmeans = KMeans(n_clusters=num_clusters, random_state=0)
-    df["Cluster"] = kmeans.fit_predict(df2)
+def apply_kmeans(df, df_to_cluster, num_clusters):
+    kmeans = KMeans(n_clusters=num_clusters, n_init=15, random_state=0)
+    df["Cluster"] = kmeans.fit_predict(df_to_cluster)
 
     return df
 
@@ -99,7 +106,7 @@ def plot_clusters(df):
 
 
 # Clean the data
-df, scaled_df = clean_data(df, 2018)
+df, scaled_df, df_target_original = clean_data(df, 2018)
 
 # Apply k-means clustering with 5 clusters
 df = apply_kmeans(df, scaled_df, 5)
